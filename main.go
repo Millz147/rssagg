@@ -55,6 +55,7 @@ func main() {
 	routerV1.Get("/healthz", handlerRediness)
 	routerV1.Get("/err", handlerError)
 	routerV1.Post("/create-user",dbRepo.handleCreateUser)
+		routerV1.Get("/user",dbRepo.handleGetUser)
 	router.Mount("/v1", routerV1)
 	srv := &http.Server{
 		Handler: router,
